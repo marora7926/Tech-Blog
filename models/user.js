@@ -1,19 +1,57 @@
-// psuedo codes for building models
-// Table - User data
-//     id
-//         Integer
-//         Doesn't allow null values
-//         Set as primary key
-//         Uses auto increment
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
+const sequelize = require('../config/config');
 
-//     username
-//         String
-//         Doesn't allow null values
-//         Is Unique
-//         Is email     
+// create our User model
+class User extends Model {
+    // set up method to run on instance data (per user) to check password
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+}
 
-//     password
-//         String
-//         Doesn't allow null values
-//         Set a default value of `10`
-//         Validates that the value has minimum 8 charaters
+User.init(
+    {
+        id: {
+            type: 
+            DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        username: {
+            type: 
+            DataTypes.STRING,
+            allowNull: false
+        },
+        password: {
+            type: 
+            DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [8]
+            }
+        }
+    },
+    {
+        hooks: {
+            // set up beforeCreate lifecycle "hook" functionality
+            async beforeCreate(newUserData) {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
+
+            async beforeUpdate(updatedUserData) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            }
+        },
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'User'
+    }
+);
+
+module.exports = User;

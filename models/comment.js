@@ -1,15 +1,18 @@
-// psuedo codes for building models
-// Table - Comment on a post
-//     id
-//         Integer
-//         Doesn't allow null values
-//         Set as primary key
-//         Uses auto increment
+const { Sequelize, Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-//     title
-//         String
-//         Doesn't allow null values.
+class Comment extends Model { }
 
-//     body
-//         String
-//         Doesn't allow null values.
+Comment.init(
+    {
+        body: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
+    },
+    {
+        sequelize
+    }
+);
+
+module.exports = Comment;

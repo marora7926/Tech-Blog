@@ -1,15 +1,16 @@
-// psuedo codes for building models
-// Table - Post
-//     id
-//         Integer
-//         Doesn't allow null values
-//         Set as primary key
-//         Uses auto increment
+const { Sequelize, Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/config');
 
-//     title
-//         String
-//         Doesn't allow null values.
+class Post extends Model { }
 
-//     body
-//         String
-//         Doesn't allow null values.
+Post.init(
+    {
+        title: DataTypes.STRING,
+        body: DataTypes.STRING
+    },
+    {
+        sequelize
+    }
+);
+
+module.exports = Post;

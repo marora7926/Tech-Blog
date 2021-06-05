@@ -1,5 +1,20 @@
-// Psudocodes for Associations:
-// one post belong to a user
-// one user will have many posts
-// one commenter will have many comments on a post
-// one comment belong to one commenter 
+const User = require ('./user');
+const Post = require ('./post');
+const Comment = require ('./Comment');
+
+Post.belongsTo(User, {
+    foreignKey: 'userId',
+    onDelete: 'CASCADE'
+});
+
+Post.hasMany(Comment, {
+    foreignKey: 'postId',
+    onDelete: 'CASCADE'
+});
+
+Comment.belongsTo(User, {
+    foreignKey: 'userId',
+    onDelete: 'CASCADE'
+});
+
+module.exports = { User, Comment, Post };
