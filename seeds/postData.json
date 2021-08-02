@@ -1,14 +1,14 @@
 [
   {
-    "title": "InSCI Community Survey",
-    "body": "International Spinal Cord Injury (InSCI) Community Survey is an international initiative to initiative to improve the lived experience of people living with SCI."
+    "title": "Handlebars.js",
+    "body": "Handlebars. js is a Javascript library used to create reusable webpage templates. The templates are combination of HTML, text, and expressions."
   },
   {
-    "title": "SCI Cognitive Study",
-    "body": "Spinal cord injury cognitive study aims to describe the extent and severity of cognitive impairment in adults with SCI."
+    "title": "MySQL",
+    "body": "MySQL is a relational database management system based on SQL – Structured Query Language. The application is used for a wide range of purposes, including data warehousing, e-commerce, and logging applications."
   },
   {
-    "title": "SCI Wellness Project",
-    "body": "Spinal cord injury wellness project aims to develop a health maintenance tool that will assist people living with SCI in self-managing their spinal needs."
+    "title": "Content Management System",
+    "body": "CMS stands for content management system. CMS is computer software or an application that uses a database to manage all content, and it can be used when developing a website."
   }
 ]
