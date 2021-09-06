@@ -26,9 +26,7 @@ router.get('/', async (req, res) => {
 
 
 router.get("/new", withAuth, (req, res) => {
-    res.render("new-post", {
-        layout: "dashboard"
-    });
+    res.render("new", { email: req.session.email} );
 });
 
 router.get("/edit/:id", withAuth, (req, res) => {

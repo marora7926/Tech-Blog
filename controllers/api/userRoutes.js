@@ -3,14 +3,14 @@ const { User } = require("../../models");
 
 router.post("/", (req, res) => {
     User.create({
-        username: req.body.username,
+        email: req.body.email,
         password: req.body.password
     })
         .then(dbUserData => {
             req.session.save(() => {
                 req.session.userId = dbUserData.id;
-                req.session.username = dbUserData.username;
-                req.session.loggedIn = true;
+                req.session.email = dbUserData.email;
+                req.session.logged_in = true;
 
                 res.json(dbUserData);
             });
@@ -22,9 +22,10 @@ router.post("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+    console.log(req.body)
     User.findOne({
         where: {
-            username: req.body.username
+            email: req.body.email
         }
     }).then(dbUserData => {
         if (!dbUserData) {
@@ -41,8 +42,8 @@ router.post("/login", (req, res) => {
 
         req.session.save(() => {
             req.session.userId = dbUserData.id;
-            req.session.username = dbUserData.username;
-            req.session.loggedIn = true;
+            req.session.email = dbUserData.email;
+            req.session.logged_in = true;
 
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
