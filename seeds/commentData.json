@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "text": "I do not enjoy handlebars much, not my area",
+    "user_id": 1,
+    "blog_id": 1
+  },
+  {
+    "id": 1,
+    "text": "MySQL is good but I prefer MongooseDB and GraphQl",
+    "user_id": 2,
+    "blog_id": 1
+  }
+]
