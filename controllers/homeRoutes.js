@@ -79,4 +79,28 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const commentData = await Comment.findAll({
+      include: [
+        {
+          model: Comment,
+          attributes: ['text'],
+        },
+      ],
+    });
+    console.log(commentData);
+    // Serialize data so the template can read it
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('comment', {
+      comments,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

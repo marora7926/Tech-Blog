@@ -36,6 +36,5 @@ router.delete('/:id', withAuth, async (req, res) => {
         res.status(500).json(err); 
     }
 });
-//write a get route that gets the comment based on the blod id
 
 module.exports = router; 

@@ -73,10 +73,10 @@ THEN I am automatically signed out of the site
   * [sequelize](https://www.npmjs.com/package/sequelize)
 
 ## Repo link
-[👋 Password-genie Repo 👋](https://github.com/marora7926/Tech-Blog)
+[👋 Tech-Blog Repo 👋](https://github.com/marora7926/Tech-Blog)
 
 ## Deployed link
-[🎥 Password-genie Application 🎥](xxxxxxx)
+[🎥 Tech-Blog Application 🎥](xxxxxxx)
 
 ## Screenshots
 ![Screenshot-landing-page](./public/assets/14-mvc-homework-demo-01.gif)
