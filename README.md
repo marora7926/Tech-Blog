@@ -76,10 +76,10 @@ THEN I am automatically signed out of the site
 [👋 Tech-Blog Repo 👋](https://github.com/marora7926/Tech-Blog)
 
 ## Deployed link
-[🎥 Tech-Blog Application 🎥](xxxxxxx)
+[🎥 Tech-Blog Application 🎥]([xxxxxxx](https://tech-blog-ma.herokuapp.com/))
 
 ## Screenshots
-![Screenshot-landing-page](./public/assets/14-mvc-homework-demo-01.gif)
+![Screenshot-landing-page](./public/assets/landing-page.jpg)
 
 ---
 © 2021 Mohit Arora. Confidential and Proprietary. All Rights Reserved.
