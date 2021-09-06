@@ -1,17 +1,17 @@
 <!-- Loop over each object in the post array -->
 <div class="posts">
-    {{#each posts as |post| }}
+    {{#each blogs as |blog| }}
         <article class="card">
             <div class="card-header flex-row justify-space-between">
                 <h2>
-                    <a href="/post/{{id}}">{{title}}</a>
+                    <a href="/blog/{{blog.id}}">{{blog.title}}</a>
                 </h2>
                 <div>
-                    {{format_date date_created}}
+                    Posted by {{blog.user.name}} on {{format_date post.createdAt}}
                 </div>
             </div>
             <div class="card-body">
-                {{body}}
+                {{blog.text}}
             </div>
         </article>
     {{/each}}
