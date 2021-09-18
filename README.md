@@ -76,7 +76,7 @@ THEN I am automatically signed out of the site
 [👋 Tech-Blog Repo 👋](https://github.com/marora7926/Tech-Blog)
 
 ## Deployed link
-[🎥 Tech-Blog Application 🎥]([xxxxxxx](https://tech-blog-ma.herokuapp.com/))
+[🎥 Tech-Blog Application 🎥](https://tech-blog-ma.herokuapp.com/)
 
 ## Screenshots
 ![Screenshot-landing-page](./public/assets/landing-page.jpg)
