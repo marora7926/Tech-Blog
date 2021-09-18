@@ -14,7 +14,7 @@ Blog.init(
         title: {
             type: DataTypes.STRING,
         },
-        body: {
+        text: {
             type: DataTypes.STRING,
         },
         user_id: {
